@@ -1,0 +1,28 @@
+function Parent(firstName, lastName, favoriteColor, favoriteNumber){
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.favoriteColor = favoriteColor;
+	this.favoriteNumber = favoriteNumber;
+	this.multiplyFavoriteNumber = function(num){
+		return num * this.favoriteNumber;
+	} 
+}
+
+var emp1 = new Parent('Dinesh', 'Sirwani', 'red', 3);
+emp1.multiplyFavoriteNumber(4);
+
+================================================================================
+function Parent(firstName, lastName, favoriteColor, favoriteFood){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.favoriteColor = favoriteColor;
+    this.favoriteFood = favoriteFood;
+}
+
+function Child(firstName, lastName, favoriteColor, favoriteFood){
+    //Parent.apply(this, arguments);
+	//Parent.call(this, firstName, lastName, favoriteColor, favoriteFood);
+	Parent.apply(this, [firstName, lastName, favoriteColor, favoriteFood])
+}
+
+var child1 = new Child('Mohit', 'Mehra', 'blue', 'butter chicken');

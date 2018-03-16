@@ -1,0 +1,38 @@
+function countdown(n){
+	for(var i=n; i>=0; i-- ){
+		setInterval((function(t){
+			if(i>0)
+				console.log("Timer" + t);
+			else
+				console.log("Ring Ring Ring!!!");
+		})(i), 1000);
+	}
+	
+}
+
+
+function countdown(n){
+	var id = setInterval(function(){
+		console.log("Timer : " + n);
+		n--;
+		if(n === 0){
+			console.log("Ring Ring Ring!!!");
+			clearInterval(id);
+		}
+	}, n);
+}
+
+countdown(5);
+
+function countDown(time){
+    var id = setInterval(function(){
+        time--;
+       
+        console.log ("Timer :" + time);
+     if (time===1) {
+        console.log ("Ring ring ring !!!");
+        clearInterval(id);
+    }
+    }, time);
+    
+}

@@ -1,0 +1,58 @@
+function filterByValue(arr, key){
+    return arr.filter(function(val){
+		return val[key];
+	});
+}
+
+filterByValue([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner');
+
+==============================================================================================
+	function find(arr, searchValue){
+		return arr.filter(function(val){
+			return val === searchValue;
+		})[0];  // [0] to just return the first element
+	};
+
+	find([1,2,3,4,5], 3) ;
+
+==============================================================================================
+function findInObj(arr, key, searchValue){
+    return arr.filter(function(obj){
+		return obj[key] === searchValue;
+	})[0];
+}
+
+findInObj([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia", isCatOwner: true}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele", isCatOwner: true}], 'isCatOwner',true);
+
+==============================================================================================
+function removeVowels(str){
+	var vowels = 'aeiou';
+	return str.split('').filter(function(character){
+		return vowels.indexOf(character.toLowerCase()) === -1;
+	}).join('').toLowerCase();  // to return the string
+}
+
+removeVowels('Elie');
+
+==============================================================================================
+function doubleOddNumbers(arr){
+	var oddNumber = arr.filter(function(value){
+		return (value%2 !== 0)
+	});
+	return oddNumber.map(function(val){
+		return val*2;
+	});
+}
+doubleOddNumbers([1,2,3,4,5]);
+
+
+=-------------------------------------------------=
+
+function doubleOddNumbers(arr){
+	return arr.filter(function(value){
+		return (value%2 !== 0);
+	}).map(function(val){
+		return val*2;
+	});
+}
+doubleOddNumbers([1,2,3,4,5]);
